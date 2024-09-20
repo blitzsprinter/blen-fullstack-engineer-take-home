@@ -223,6 +223,7 @@ const CompletedListTable = ({ data }: CompletedListTableProps) => {
     toast(response.message);
 
     if (response.success) {
+      setRowSelection({});
       router.refresh();
     }
   };

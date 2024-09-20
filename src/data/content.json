@@ -88,7 +88,8 @@
     "deleteSelection": "Delete Selected Tasks",
     "cancel": "Cancel",
     "continue": "Continue",
-    "back": "Go Back"
+    "back": "Go Back",
+    "save": "Save"
   },
   "page": {
     "list": {

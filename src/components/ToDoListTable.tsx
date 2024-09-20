@@ -224,6 +224,7 @@ export default function TodoListTable({ data }: TodoListTableProps) {
     toast(response.message);
 
     if (response.success) {
+      setRowSelection({});
       router.refresh();
     }
   };

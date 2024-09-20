@@ -240,7 +240,7 @@ const TaskForm = ({
           type="submit"
           onClick={form.handleSubmit(onSubmit)}
           disabled={!form.formState.isValid}>
-          {type === OperationType.Create ? content.button.create : content.button.edit}
+          {type === OperationType.Create ? content.button.create : content.button.save}
         </Button>
       </CardFooter>
     </Card>
