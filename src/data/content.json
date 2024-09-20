@@ -89,5 +89,15 @@
     "cancel": "Cancel",
     "continue": "Continue",
     "back": "Go Back"
+  },
+  "page": {
+    "add": {
+      "title": "Create a Task",
+      "description": "Add a new task to the list"
+    },
+    "update": {
+      "title": "Edit a Task",
+      "description": "Edit the task to update the list"
+    }
   }
 }
