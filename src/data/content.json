@@ -1,0 +1,93 @@
+{
+  "label": {
+    "select": {
+      "accessorKey": "select",
+      "ariaLabel": {
+        "header": "Select All",
+        "cell": "Select Row"
+      }
+    },
+    "title": {
+      "text": "Title",
+      "accessorKey": "title",
+      "placeholder": "Enter a title of the task"
+    },
+    "description": {
+      "text": "Description",
+      "accessorKey": "description",
+      "placeholder": "Enter a description of the task"
+    },
+    "priority": {
+      "text": "Priority",
+      "accessorKey": "priority",
+      "placeholder": "Enter a priority of the task"
+    },
+    "dueDate": {
+      "text": "Due Date",
+      "accessorKey": "dueDate",
+      "placeholder": "Enter a due date of the task"
+    },
+    "createdAt": {
+      "text": "Created At",
+      "accessorKey": "createdAt"
+    },
+    "updatedAt": {
+      "text": "Updated At",
+      "accessorKey": "updatedAt"
+    },
+    "actions": {
+      "text": "Actions",
+      "accessorKey": "actions"
+    },
+    "columns": {
+      "text": "Columns"
+    }
+  },
+  "priority": {
+    "low": {
+      "text": "Low",
+      "color": "#AAAAAA"
+    },
+    "medium": {
+      "text": "Medium",
+      "color": "#FFA500"
+    },
+    "high": {
+      "text": "High",
+      "color": "#8B0000"
+    },
+    "urgent": {
+      "text": "Urgent",
+      "color": "#FF0000"
+    }
+  },
+  "message": {
+    "createSuccess": "Task has been created successfully!",
+    "createFailure": "Failed to create a task.",
+    "updateSuccess": "Task has been updated successfully!",
+    "updateFailure": "Failed to update a task.",
+    "deleteSuccess": "The task has been deleted.",
+    "deleteFailure": "Failed to delete a task.",
+    "multipleDeletionSuccess": "The selected tasks have been deleted.",
+    "multipleDeletionFailure": "Failed to delete the selected tasks.",
+    "deleteConfirmation": {
+      "title": "Are you absolutely sure?",
+      "description": "This action cannot be undone. This will permanently delete your task and remove your data from our servers."
+    },
+    "markAsCompleted": "Marked as completed.",
+    "markAsIncomplete": "Marked as to do.",
+    "markFailure": "Failed to update the status",
+    "error": "Something went wrong"
+  },
+  "button": {
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "mark": "Mark As Completed",
+    "unMark": "Mark As To Do",
+    "deleteSelection": "Delete Selected Tasks",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Go Back"
+  }
+}
