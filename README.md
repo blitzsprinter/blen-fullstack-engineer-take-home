@@ -1,115 +1,146 @@
-# Next.js Full Stack Engineer Code Challenge: Personal Task Manager
+# Personal Task Manager (Solution) – Full Stack Engineer Code Challenge
+
+<img alt="screenshot" src="public/screenshot.jpg" />
 
 ## Overview
 
-Welcome to our Next.js full stack code challenge! This challenge is designed to assess your skills in web application development using Next.js 14+ with the App Router. You'll be building a simple Personal Task Manager application.
+**Personal Task Manager** built using **Next.js 14+** and **TypeScript**, leveraging modern technologies such as **Drizzle ORM** for SQLite database management and **Tailwind CSS** for styling. The application allows users to manage tasks, providing features such as task creation, editing, and deletion. It also supports task prioritization, making it a robust tool for personal task management.
 
-## Challenge Requirements
+Key technologies used:
 
-1. Use Next.js 14+ with the App Router
-2. Use TypeScript for all code
-3. Implement local data storage using SQLite with Drizzle ORM
-4. This project comes with Tailwind CSS pre-configured. To save time, we recommend using [shadcn/ui](https://ui.shadcn.com/) for pre-built components. However, you're free to style the application using any method you prefer
-5. Implement server actions and mutations for form submissions
-6. Use server components as much as possible, only using client components when necessary
-7. Ensure your code is properly linted using ESLint (configuration is provided in the project)
+- **Next.js App Router**
+- **SQLite with Drizzle ORM**
+- **Tailwind CSS**
+- **shadcn/ui** for pre-built components
+- **TanStack Query** for efficient data fetching
+- **Jest** for unit testing
+- **ESLint** and **Husky** for code linting and pre-commit checks
+- **Prettier** for code formatting
 
-## Functionality to Implement
+## Features
 
-Create the following routes using Next.js App Router:
+### 1. Task List Page (`/`)
 
-1. Task List Page (`/`)
+- Displays a list of tasks using a server component.
+- Each task shows its title, priority, due date, creation date and update date.
+- Includes a button to add a new task (client component).
+- Implements a refresh mechanism to update the task list.
 
-   - Display a list of tasks (use a server component)
-   - Each task should show its title and due date
-   - Include a button to add a new task (client component)
-   - Implement a way to refresh the task list
+### 2. Add Task Page (`/add`)
 
-2. Add Task Page (`/add`)
+- Users can input the following:
+  - **Task Title**
+  - **Description**
+  - **Priority**
+  - **Due Date**
+- Form submission is handled through server actions and mutations.
+- Validates inputs before saving.
+- Persists the task to the SQLite database via Drizzle ORM.
 
-   - Allow users to input a task title, description, and due date
-   - Implement form submission using server actions and mutations
-   - Validate inputs before saving
-   - Save the task to the local SQLite database using Drizzle ORM
+### 3. Task Detail Page (`/[id]`)
 
-3. Task Detail Page (`/[id]`)
+- Displays full details of the selected task using a server component.
+- Provides options to **toggle status**, **edit** or **delete** the task using client components and server actions.
 
-   - Show full details of a selected task (server component)
-   - Include options to edit or delete the task (client components)
+### 4. Edit Task Page (`/[id]/edit`)
 
-4. Edit Task Page (`/[id]/edit`)
-   - Allow users to modify task details
-   - Update the task in the local SQLite database using Drizzle ORM
+- Allows users to modify task details.
+- Updates the task in the local SQLite database using Drizzle ORM.
 
-## Getting Started
+### Additional Features
 
-1. Clone this repository to your local machine
-2. Install dependencies: `pnpm install`
-3. Run database migrations: `pnpm migrate` or `pnpm drizzle-kit migrate`
-4. Start the development server: `pnpm dev`
+1. **Task Prioritization**: Users can set priorities for tasks (Low, Medium, High, Urgent)
+2. **Optimistic Updates**: Provides a smoother user experience by updating the UI optimistically.
+3. **Efficient Data Fetching**: Utilizes **TanStack Query** for efficient data fetching, caching, optimistic updates, and cache invalidation.
+4. **Unit Testing**: Added **Jest** unit tests for key components and server actions.
+5. **Husky** Integration: Ensures pre-commit checks using ESLint.
 
-**Notes:**
+## Installation & Setup
 
-- If you would like to manage the database using a GUI, you can use the Drizzle Studio by running `pnpm studio` or `pnpm drizzle-kit studio`.
-- If you make any changes to the schema, you will need to generate new Drizzle artifacts by running `pnpm generate` or `pnpm drizzle-kit generate`. Then, you will need to run `pnpm migrate` or `pnpm drizzle-kit migrate` to apply the changes to the database.
-- To lint the code, run `pnpm lint`.
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/azuresphere7/blen-fullstack-engineer-take-home.git
+cd blen-fullstack-engineer-take-home
+```
+
+### Step 2: Install dependencies
+
+```bash
+pnpm install
+```
+
+### Step 3: Run database migrations
+
+```bash
+pnpm migrate
+# or
+pnpm drizzle-kit migrate
+```
+
+### Step 4: Start the development server
+
+```bash
+pnpm dev
+```
+
+### Step 5: (Optional) Manage database using Drizzle Studio
+
+For easier management of the SQLite database, you can use **Drizzle Studio**:
+
+```bash
+pnpm studio
+# or
+pnpm drizzle-kit studio
+```
+
+> **Note:**  
+> If you modify the database schema, generate new Drizzle artifacts by running:
+>
+> ```bash
+> pnpm generate
+> # or
+> pnpm drizzle-kit generate
+> ```
+>
+> Then, apply the changes to the database:
+>
+> ```bash
+> pnpm migrate
+> # or
+> pnpm drizzle-kit migrate
+> ```
+
+### Step 6: Lint the code
+
+You can make sure the code keeps the best practices by running the linter:
+
+```bash
+pnpm lint
+```
+
+### Step 7: Test the components and actions
+
+You can also test the components and server side actions by running:
+
+```bash
+pnpm test
+```
 
 ## Project Structure
 
-- `src/app/`: Contains the Next.js application routes and components
-- `./drizzle.config.ts`: Drizzle configuration
-- `src/db/`: Contains the database schema and client setup
-- `migrations/`: Contains the database migrations
-- `src/styles/`: Global styles (if any)
-- `public/`: Static assets
+The project follows a structured folder organization to ensure scalability and maintainability:
 
-## Important Notes
-
-- This project uses pnpm as the package manager
-- SQLite is used for data storage
-- Drizzle ORM has been set up with a predefined schema and client
-- The Drizzle client is defined in `db/client.ts`
-- The Drizzle schema is defined in `db/schema.ts`
-- Make sure to use the provided Drizzle setup for database operations
-- Implement server actions for form submissions, especially for the task creation form
-- Prioritize the use of server components, only using client components when necessary (e.g., for interactivity)
-- You may consider using UI libraries such as [shadcn/ui](https://ui.shadcn.com/) for consistent and attractive components, but this is not a requirement
-
-## Bonus Points (Optional)
-
-If you have extra time, consider implementing one or more of the following:
-
-1. Implement a data management library like TanStack Query (or similar) for:
-   - Efficient data fetching and caching
-   - Data mutations
-   - Optimistic updates
-   - Cache invalidation
-2. Add unit tests for your components and server actions
-3. Implement a simple task prioritization feature
-4. Implement optimistic updates for a smoother user experience
-
-**Note:** TanStack Query is already added and configured in this project
-
-## Submission Instructions
-
-1. Make sure to submit your work before the deadline indicated in the invitation email
-2. Ensure all changes are committed
-3. Do not create a pull request
-4. Create a bundle: `git bundle create blen_fullstack_challenge.bundle --all`
-5. Email your submission to [engineering@blencorp.com] with the subject "Full Stack Code Challenge Submission - [Your Name]"
-
-## Evaluation Criteria
-
-We will evaluate your submission based on:
-
-- Correct implementation of required features
-- Effective use of Next.js App Router, server components, and server actions
-- Appropriate use of client components only when necessary
-- Code quality, organization, and TypeScript usage
-- Proper implementation of SQLite with Drizzle ORM
-- Git usage and commit history
-- Proper code linting and adherence to the provided ESLint configuration
-- Bonus features (if implemented, but not required for a strong submission)
-- Late submissions are welcome and will be reviewed, though priority will be given to timely submissions
-
-Good luck! We're excited to see your solution.
+```
+├── public/                 # Static assets
+├── migrations/             # Database migrations
+├── src/
+│   ├── app/                # Next.js routes and components
+│   ├── components/         # Reusable UI components
+│   ├── constants/          # Application constants
+│   ├── data/               # Data management (TanStack Query hooks, etc.)
+│   ├── db/                 # Database schema and Drizzle setup
+│   ├── lib/                # Utility functions and libraries
+│   ├── providers/          # Context and providers
+|   └── styles/             # Global styles (Tailwind config, etc.)
+```
