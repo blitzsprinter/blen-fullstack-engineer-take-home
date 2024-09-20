@@ -1,6 +1,6 @@
-import { PropsWithChildren } from 'react';
-import { TanstackQueryProvider } from './tanstack-query-provider';
-import { ThemeProvider } from './theme-provider';
+import { PropsWithChildren } from "react";
+import { TanstackQueryProvider } from "./tanstack-query-provider";
+import { ThemeProvider } from "./theme-provider";
 
 type AppProvidersProps = PropsWithChildren;
 

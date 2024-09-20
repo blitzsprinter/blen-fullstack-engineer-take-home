@@ -1,1 +1,1 @@
-export const DB_NAME = 'tasks.db' as const;
+export const DB_NAME = "tasks.db" as const;
