@@ -91,6 +91,14 @@
     "back": "Go Back"
   },
   "page": {
+    "list": {
+      "title": {
+        "completed": "Completed:",
+        "incomplete": "To Do:"
+      },
+      "filter": "Filter tasks...",
+      "empty": "No Results Found"
+    },
     "add": {
       "title": "Create a Task",
       "description": "Add a new task to the list"
